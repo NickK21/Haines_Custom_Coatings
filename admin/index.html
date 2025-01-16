@@ -4,20 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Content Manager</title>
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.min.js" defer></script>
-<script>
-    window.addEventListener('load', function () {
-        if (window.CMS) {
-            window.CMS.init();
-        } else {
-            console.error('Netlify CMS failed to load.');
-        }
-    });
-</script>
+    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.min.js"></script>
 </head>
 <body>
     <script>
-        window.CMS.init();
+        window.addEventListener('load', function () {
+            if (window.CMS) {
+                window.CMS.init();
+            } else {
+                console.error('Netlify CMS failed to load.');
+            }
+        });
     </script>
 </body>
 </html>
