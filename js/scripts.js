@@ -1,9 +1,9 @@
 // Array of background images
 const backgrounds = [
-  '../images/EXT_House2_Background.jpeg',
-  '../images/INT_Background.jpeg',
-  '../images/INT_Background2.jpeg',
-  '../images/INT_Background3.jpeg'
+  '../images/uploads/EXT_House2_Background.jpeg',
+  '../images/uploads/INT_Background.jpeg',
+  '../images/uploads/INT_Background2.jpeg',
+  '../images/uploads/INT_Background3.jpeg'
 ];
 
 let currentIndex = 0;

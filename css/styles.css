@@ -7,7 +7,7 @@ body {
   flex-direction: column; /* Stack header, main, and footer */
   min-height: 100vh; /* Full viewport height */
   color: #F0F0F0; /* Default text color */
-  background-image: url('../images/INT_Background.jpeg');
+  background-image: url('../images/uploads/INT_Background.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
