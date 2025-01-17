@@ -232,7 +232,13 @@ footer a:hover {
   }
 
   nav ul {
-    gap: 0.5rem;
+    nav ul {
+      justify-content: space-around; /* Adjust spacing for smaller screens */
+    }
+  
+    nav ul li a {
+      font-size: 0.9rem; /* Slightly smaller text for smaller screens */
+    }
   }
 
   .extra-services ul {
