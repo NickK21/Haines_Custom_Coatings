@@ -62,8 +62,9 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  justify-content: center;
   gap: 1rem;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  justify-content: center;
 }
 
 nav ul li {
@@ -223,41 +224,8 @@ footer a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-
   nav ul {
-    nav ul {
-      justify-content: space-around; /* Adjust spacing for smaller screens */
-    }
-  
-    nav ul li a {
-      font-size: 0.9rem; /* Slightly smaller text for smaller screens */
-    }
-  }
-
-  .extra-services ul {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Fade-In Animation */
-header, footer {
-  animation: fadeIn 1.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+    flex-direction: row; /* Ensure horizontal orientation */
+    justify-content: center;
   }
 }
