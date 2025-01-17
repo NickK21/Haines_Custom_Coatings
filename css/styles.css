@@ -57,21 +57,25 @@ header {
 }
 
 /* Navigation Styles */
-nav ul {
+nav {
+  position: relative;
+}
+
+.navbar-menu {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
   gap: 1rem;
-  flex-wrap: nowrap; /* Prevent wrapping */
   justify-content: center;
+  flex-wrap: nowrap; /* Prevent wrapping */
 }
 
-nav ul li {
+.navbar-menu li {
   margin: 0;
 }
 
-nav ul li a {
+.navbar-menu li a {
   background-color: #353535;
   color: #FFFFFF;
   padding: 0.5rem 1rem;
@@ -80,8 +84,54 @@ nav ul li a {
   white-space: nowrap; /* Prevent text from wrapping */
 }
 
-nav ul li a:hover {
+.navbar-menu li a:hover {
   color: #FF0000;
+  background-color: #565656;
+}
+
+/* Hamburger Menu Toggle */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.navbar-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #FFFFFF;
+  transition: transform 0.3s ease;
+}
+
+/* Dropdown Menu */
+.navbar-dropdown {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to right, #d5d5d5, #565656);
+  padding: 1rem;
+  gap: 1rem;
+  list-style: none;
+  z-index: 1000;
+}
+
+.navbar-dropdown.active {
+  display: flex;
+}
+
+.navbar-dropdown li a {
+  text-align: center;
+  background-color: #353535;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.navbar-dropdown li a:hover {
   background-color: #565656;
 }
 
@@ -225,16 +275,11 @@ footer a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
+  .navbar-menu {
+    display: none;
   }
 
-  main {
-    padding: 1rem;
-  }
-
-  footer {
-    font-size: 0.9rem;
+  .navbar-toggle {
+    display: flex;
   }
 }
