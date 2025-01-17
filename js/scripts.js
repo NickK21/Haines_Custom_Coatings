@@ -24,7 +24,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggleButton = document.getElementById("navbar-toggle");
   const menu = document.getElementById("navbar-menu");
 
+  // Toggle the menu on button click
   toggleButton.addEventListener("click", () => {
     menu.classList.toggle("active");
+  });
+
+  // Optional: Close the menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!menu.contains(e.target) && !toggleButton.contains(e.target)) {
+      menu.classList.remove("active");
+    }
   });
 });
