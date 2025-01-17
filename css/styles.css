@@ -226,7 +226,15 @@ footer a:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
   nav ul {
-    flex-direction: row; /* Ensure horizontal orientation */
+    flex-wrap: wrap;
     justify-content: center;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
   }
 }
