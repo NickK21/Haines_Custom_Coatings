@@ -93,14 +93,17 @@ nav ul {
 .navbar-menu.active {
   display: flex;
   flex-direction: column;
+  background-color: rgba(53, 53, 53, 0.8);
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: rgba(53, 53, 53, 0.9);
+  z-index: 999;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
   padding: 1rem 0;
   gap: 1rem;
-  z-index: 999;
 }
 
 .navbar-menu li {
