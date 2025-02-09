@@ -6,65 +6,211 @@
     <title>Haines Custom Coatings</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400&family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <script defer src="js/scripts.js"></script>
 </head>
 <body>
-  <header>
+
+<header>
     <div class="logo">
-      <a href="index.html">
-        <img src="images/HCC_Logo.png" alt="Haines Custom Coatings">
-      </a>
+        <a href="#home">
+            <img src="images/HCC_Logo_Color_2.png" alt="Haines Custom Coatings">
+        </a>
     </div>
     <nav>
-      <button id="navbar-toggle" class="navbar-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul id="navbar-menu" class="navbar-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="tel: +18315159328" class="cta">Contact Us</a></li>
-      </ul>
+        <button id="navbar-toggle" class="navbar-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul id="navbar-menu" class="navbar-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="tel:+18315159328" class="cta">Contact Us</a></li>
+        </ul>
     </nav>
-  </header>
-    <main>
-        <section>
+</header>
+
+<main>
+    <!-- Home Section -->
+    <div class="text-overlay">
+        <section id="home" class="section">
             <h1>Welcome to Haines Custom Coatings</h1>
             <p>We specialize in interior and exterior painting services for Santa Cruz and neighboring counties.</p>
-        </section>
-        <section>
-          <div class="services">
-            <h2>Our Services</h2>
-            <ul>
-              <li>Interior Painting</li>
-              <li>Exterior Painting</li>
-              <li>Commercial Painting</li>
-              <li>Residential Painting</li>
-              <li>Custom Coating Solutions</li>
-            </ul>
+            
+            <div class="cta-banner">
+              <h2>🏡 Ready to Transform Your Home?</h2>
+              <p>Get a free consultation and color recommendations from our experts.</p>
+          
+              <div class="quote-tool">
+                  <h3>Get Your Free Quote</h3>
+                  <form id="quoteForm" action="http://localhost:8000/send_quote.php" method="POST">
+                      <div class="form-row">
+                          <div class="form-group">
+                              <label for="cabinets">Number of Cabinets:</label>
+                              <input type="number" id="cabinets" name="cabinets" min="0" value="0">
+                          </div>
+                          <div class="form-group">
+                              <label for="drawers">Number of Drawers:</label>
+                              <input type="number" id="drawers" name="drawers" min="0" value="0">
+                          </div>
+                          <div class="form-group">
+                              <label for="doors">Number of Doors:</label>
+                              <input type="number" id="doors" name="doors" min="0" value="0">
+                          </div>
+                      </div>
+          
+                      <div class="form-group full-width">
+                        <label for="squareFootage">Square Footage:</label>
+                        <input type="number" id="squareFootage" name="squareFootage" placeholder="Enter square footage">
+                    </div>                        
+
+                      <div class="form-group">
+                          <label for="notes">Additional Notes (Optional):</label>
+                          <textarea id="notes" name="notes" rows="3"></textarea>
+                      </div>
+          
+                      <div class="form-row">
+                          <div class="form-group">
+                              <label for="name">Your Name:</label>
+                              <input type="text" id="name" name="name" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="email">Your Email:</label>
+                              <input type="email" id="email" name="email" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="phone">Your Phone Number:</label>
+                              <input type="tel" id="phone" name="phone" required>
+                          </div>
+                      </div>
+          
+                      <p class="quote-estimate"><strong>Estimated Cost: <span id="estimatedCost">$0</span></strong></p>
+          
+                      <button type="submit" class="quote-btn">Get My Free Quote</button>
+                  </form>
+              </div>
           </div>
         </section>
-        <section>
-            <h2>Areas We Serve</h2>
-            <p>Santa Cruz, Capitola, Scotts Valley, Watsonville, and more.</p>
+      </div>
+
+    <!-- Services Section -->
+    <div class="text-overlay">
+        <section id="services" class="section">
+            <div class="services-container">
+                <!-- Left Side: Service Cards -->
+                <div class="service-list">
+                    <h2>Our Services</h2>
+                    <div class="service-card">
+                        <h3>Interior Painting</h3>
+                        <p>Expert application of health-compliant paints and stains to enhance aesthetics and durability.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Exterior Painting</h3>
+                        <p>Premium finishes and time-tested coatings designed to withstand coastal climates.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Commercial Painting</h3>
+                        <p>Durable finishes for high-traffic commercial spaces, ensuring long-lasting professional appeal.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Residential Painting</h3>
+                        <p>Customized painting solutions to enhance your home’s style and longevity.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Custom Coating Solutions</h3>
+                        <p>Specialized coatings tailored to unique project needs for durability and performance.</p>
+                    </div>
+                </div>
+
+                <!-- Right Side: Also Offer Service Cards -->
+                <div class="service-list">
+                    <h2>We Also Offer:</h2>
+                    <div class="service-card">
+                        <h3>Deck or Porch Staining</h3>
+                        <p>Preserves wood’s longevity and enhances its natural beauty while protecting against weather damage.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Door Staining</h3>
+                        <p>Brings out the rich texture of wooden doors while ensuring long-lasting color retention.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Fence or Gate Painting</h3>
+                        <p>Protects against rust, rot, and fading while adding curb appeal.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Siding Staining</h3>
+                        <p>Strengthens the surface against environmental damage while maintaining a fresh, polished look.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Paint Removal</h3>
+                        <p>Safe and effective removal of old or damaged paint layers, preparing surfaces for refinishing.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Trim & Baseboard Painting</h3>
+                        <p>Provides clean, sharp detailing that enhances the overall aesthetic of interior spaces.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Wallpaper Removal</h3>
+                        <p>Carefully removes outdated wallpaper without damaging underlying surfaces, readying walls for new finishes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Us Message: Centered Below Both Lists -->
+            <div class="service-contact">
+                <p>Contact Us To Inquire About Other Services We Provide!</p>
+            </div>
         </section>
-    </main>
-    <footer>
-      <div class="footer-content">
-          <p>
-              <a href="tel:+18315159328">
-                  <span>&#128222;</span> (831) 515-9328
-              </a> | 
-              <a href="mailto:hainescustomcoatings@gmail.com">
-                  <span>&#9993;</span> hainescustomcoatings@gmail.com
-              </a>
-          </p>
-          <p>&copy; 2025 Haines Custom Coatings. All Rights Reserved.</p>
-        </div>
-    </footer>
-    <script src="js/scripts.js"></script>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="text-overlay">
+        <section id="gallery" class="section">
+            <h2>Gallery</h2>
+            <div class="gallery">
+                <img src="images/uploads/EXT_House1_Front1.png" alt="House Front 1">
+                <img src="images/uploads/EXT_House1_Front2.png" alt="House Front 2">
+                <img src="images/uploads/EXT_House1_Front3.png" alt="House Front 3">
+                <img src="images/uploads/INT_Dining_Room.png" alt="Dining Room">
+                <img src="images/uploads/INT_Frontdoor_View.png" alt="Front Door">
+            </div>
+        </section>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="text-overlay">
+        <section id="testimonials" class="section">
+            <h2>What Our Clients Say</h2>
+            <blockquote>"Fantastic service! My house looks brand new." - Sarah L.</blockquote>
+            <blockquote>"Highly professional and meticulous." - Mark R.</blockquote>
+            <blockquote>"Great value for the quality of work." - Emily G.</blockquote>
+        </section>
+    </div>
+
+    <!-- About Section -->
+    <div class="text-overlay">
+        <section id="about" class="section">
+            <h2>About Us</h2>
+            <p>Haines Custom Coatings is committed to delivering high-quality painting services for homes and businesses in Santa Cruz and beyond.</p>
+            <p>We pride ourselves on providing generations of quality service. With decades of experience in residential and commercial painting, our mission is to transform your space with precision, care, and expertise.</p>
+            <p>Whether you're looking to refresh your home's interior or elevate the curb appeal of your business, our team of professionals delivers exceptional results every time.</p>
+            <p>Call Us Today For Your Free Local Estimate!</p>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <span>Contact us: 
+            <a href="tel:+18315159328">&#128222;(831) 515-9328</a> | 
+            <a href="mailto:hainescustomcoatings@gmail.com">&#9993; hainescustomcoatings@gmail.com</a>
+        </span>
+        <span>| © 2025 Haines Custom Coatings LIC# 1108377 | All Rights Reserved</span>
+    </div>
+</footer>
+
 </body>
 </html>
