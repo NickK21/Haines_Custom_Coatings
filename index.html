@@ -46,51 +46,49 @@
           
               <div class="quote-tool">
                   <h3>Get Your Free Quote</h3>
-                  <form id="quoteForm" action="http://localhost:8000/send_quote.php" method="POST">
-                      <div class="form-row">
-                          <div class="form-group">
-                              <label for="cabinets">Number of Cabinets:</label>
-                              <input type="number" id="cabinets" name="cabinets" min="0" value="0">
-                          </div>
-                          <div class="form-group">
-                              <label for="drawers">Number of Drawers:</label>
-                              <input type="number" id="drawers" name="drawers" min="0" value="0">
-                          </div>
-                          <div class="form-group">
-                              <label for="doors">Number of Doors:</label>
-                              <input type="number" id="doors" name="doors" min="0" value="0">
-                          </div>
-                      </div>
-          
-                      <div class="form-group full-width">
+                  <form name="quoteForm" method="POST" data-netlify="true">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cabinets">Number of Cabinets:</label>
+                            <input type="number" id="cabinets" name="cabinets" min="0" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="drawers">Number of Drawers:</label>
+                            <input type="number" id="drawers" name="drawers" min="0" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="doors">Number of Doors:</label>
+                            <input type="number" id="doors" name="doors" min="0" value="0">
+                        </div>
+                    </div>
+                
+                    <div class="form-group full-width">
                         <label for="squareFootage">Square Footage:</label>
                         <input type="number" id="squareFootage" name="squareFootage" placeholder="Enter square footage">
                     </div>                        
-
-                      <div class="form-group">
-                          <label for="notes">Additional Notes (Optional):</label>
-                          <textarea id="notes" name="notes" rows="3"></textarea>
-                      </div>
-          
-                      <div class="form-row">
-                          <div class="form-group">
-                              <label for="name">Your Name:</label>
-                              <input type="text" id="name" name="name" required>
-                          </div>
-                          <div class="form-group">
-                              <label for="email">Your Email:</label>
-                              <input type="email" id="email" name="email" required>
-                          </div>
-                          <div class="form-group">
-                              <label for="phone">Your Phone Number:</label>
-                              <input type="tel" id="phone" name="phone" required>
-                          </div>
-                      </div>
-          
-                      <p class="quote-estimate"><strong>Estimated Cost: <span id="estimatedCost">$0</span></strong></p>
-          
-                      <button type="submit" class="quote-btn">Get My Free Quote</button>
-                  </form>
+                
+                    <div class="form-group">
+                        <label for="notes">Additional Notes (Optional):</label>
+                        <textarea id="notes" name="notes" rows="3"></textarea>
+                    </div>
+                
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Your Phone Number:</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                
+                    <button type="submit" class="quote-btn">Get My Free Quote</button>
+                </form>
               </div>
           </div>
         </section>
