@@ -75,16 +75,17 @@ document.addEventListener("DOMContentLoaded", () => {
       updateImage(currentIndex + 1);
   });
 
-  // Prevent navigation from going out of bounds
-  prevButton.addEventListener("click", () => {
-      if (currentIndex > 0) {
-          updateImage(currentIndex - 1);
-      }
+  // Close on clicking outside image
+  lightbox.addEventListener("click", (event) => {
+    if (event.target !== lightboxImg && event.target !== prevBtn && event.target !== nextBtn) {
+        lightbox.style.display = "none";
+    }
   });
 
-  nextButton.addEventListener("click", () => {
-      if (currentIndex < galleryImages.length - 1) {
-          updateImage(currentIndex + 1);
+  // Close on pressing Esc
+  document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+          lightbox.style.display = "none";
       }
   });
 });
@@ -111,114 +112,89 @@ changeBackground();
 // Rotate background every 5 seconds
 setInterval(changeBackground, 5000);
 
-document.addEventListener("DOMContentLoaded", function() {
-  const form = document.getElementById("quoteForm");
+window.onload = function() {
   const cabinetsInput = document.getElementById("cabinets");
-  const drawersInput = document.getElementById("drawers");
   const doorsInput = document.getElementById("doors");
   const squareFootageInput = document.getElementById("squareFootage");
   const estimatedCost = document.getElementById("estimatedCost");
 
+  if (!estimatedCost) {
+      console.error("🚨 ERROR: The estimated cost element is missing!");
+      return;
+  }
+
   // Define pricing
-  const pricePerCabinet = 50; 
-  const pricePerDrawer = 30;
-  const pricePerDoor = 75;
+  const pricePerCabinet = 120;
+  const pricePerDoor = 160;
   const pricePerSquareFoot = 2.50;
 
-  // Function to calculate estimate
   function updateEstimate() {
       const cabinets = parseInt(cabinetsInput.value) || 0;
-      const drawers = parseInt(drawersInput.value) || 0;
       const doors = parseInt(doorsInput.value) || 0;
       const squareFootage = parseFloat(squareFootageInput.value) || 0;
 
       const total = (cabinets * pricePerCabinet) + 
-                    (drawers * pricePerDrawer) + 
                     (doors * pricePerDoor) + 
                     (squareFootage * pricePerSquareFoot);
 
-      estimatedCost.textContent = `$${total.toFixed(2)}`;
+      estimatedCost.textContent = `Estimated Cost: $${total.toFixed(2)}`;
   }
 
-  // Attach event listeners to input fields
   cabinetsInput.addEventListener("input", updateEstimate);
-  drawersInput.addEventListener("input", updateEstimate);
   doorsInput.addEventListener("input", updateEstimate);
   squareFootageInput.addEventListener("input", updateEstimate);
 
-  // Form submission handler
-  form.addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      const formData = new FormData(form);
-      fetch("send_quote.php", {
-          method: "POST",
-          body: formData
-      }).then(response => response.text()).then(data => {
-          alert("Quote request submitted successfully! We will contact you soon.");
-          form.reset();
-          estimatedCost.textContent = "$0";
-      }).catch(error => console.error("Error:", error));
-  });
-});
+  // Ensure initial value is displayed
+  updateEstimate();
+};
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("✅ DOM fully loaded");
-
   const homeButton = document.querySelector('.navbar-menu a[href="#home"]');
   const homeSection = document.getElementById("home");
 
   if (homeButton && homeSection) {
-    console.log("🏠 Home button found:", homeButton);
-    console.log("📍 Home section found:", homeSection);
-
     homeButton.addEventListener("click", (event) => {
       event.preventDefault(); // Prevents default anchor behavior
 
-      console.log("🏠 Home button Clicked! Scrolling to #home...");
-
       homeSection.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      window.scrollTo({
+        top: homeSection.offsetTop - 500, // Scrolls slightly past the navbar
+        behavior: "smooth"
+      });
 
       setTimeout(() => {
         history.pushState(null, null, window.location.pathname);
-        console.log("🏠 Scroll and hash reset complete.");
       }, 500);
     });
   } else {
     console.warn("⚠️ Home button or Home section not found.");
   }
-// });
-
-
-// DEBUGGING FORM BUTTON JS
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("✅ JavaScript Loaded!");
-
-  setTimeout(() => {
-    const submitButton = document.querySelector(".quote-btn");
-
-    if (!submitButton) {
-        console.error("🚨 ERROR: Submit button not found! Check if it's inside a hidden div.");
-        return;
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    const servicesButton = document.querySelector('a[href="#services"]');
+    const servicesSection = document.getElementById("services");
+  
+    if (!servicesButton || !servicesSection) {
+      console.error("🚨 ERROR: Services button or section not found!");
+      return;
     }
-
-    console.log("🟢 Submit button found!", submitButton);
-
-    submitButton.addEventListener("click", function (event) {
-        event.preventDefault();
-        console.log("🟢 Button clicked!");
-        alert("🟢 Button is now working!");
+  
+    servicesButton.addEventListener("click", (event) => {
+      event.preventDefault();
+  
+      console.log("✅ Services button clicked! Adjusting scroll position...");
+      
+      const yOffset = -600; // Change this value if needed
+      const y = servicesSection.getBoundingClientRect().top + window.scrollY + yOffset;
+  
+      console.log(`🔥 Scrolling to Y Position: ${y}`);
+      
+      window.scrollTo({ top: y, behavior: "smooth" });
+  
+      setTimeout(() => {
+        console.log("🎯 Final scroll position:", window.scrollY);
+      }, 1000);
     });
-}, 1000);
-});
-
-//   // Toggle Mobile Navbar Menu
-  const navbarToggle = document.getElementById("navbar-toggle");
-  const navbarMenu = document.getElementById("navbar-menu");
-
-  if (navbarToggle && navbarMenu) {
-      navbarToggle.addEventListener("click", () => {
-          navbarMenu.classList.toggle("active");
-      });
-  }
+  });
 });

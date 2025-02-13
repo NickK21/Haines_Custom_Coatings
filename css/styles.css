@@ -21,8 +21,8 @@ body, html {
 
 /* Ensure consistent spacing when navigating via navbar */
 section {
-  scroll-margin-top: 160px !important; /* Ensure spacing when scrolling */
-  padding-top: 160px !important; /* Uniform spacing for all sections */
+  scroll-margin-top: 120px !important; /* Ensure spacing when scrolling */
+  padding-top: 120px !important; /* Uniform spacing for all sections */
 }
 
 html {
@@ -35,23 +35,22 @@ html {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding-top: 50px !important;
-  margin-top: -40px !important;
+  scroll-margin-top: 0 !important;
+  padding-top: 100px !important;
+  margin-top: 0px !important;
   overflow: visible;
 }
 
 #services h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #D9C6A0;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-  margin-bottom: 20px;
 }
 
-section {
-  padding-top: 120px; /* Adjust based on header height */
-  margin-top: -40px;
-  scroll-margin-top: 100px;
+.gallery {
+  margin-bottom: 10px; /* Reduce spacing */
+  padding-bottom: 0; /* Remove unnecessary padding */
 }
 
 /* Ensure Square Footage box matches the other input fields */
@@ -71,21 +70,61 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  min-height: 90vh; /* Ensures the section fills the viewport */
-  padding-top: 120px;
+  padding: 80px 10px;
+  min-height: 75vh;
   padding-bottom: 0 !important;
-  margin-bottom: -20px !important;
+  margin-top: 0px;
+  margin-bottom: -90px !important;
   scroll-margin-top: 0 !important; /* Ensures smooth scrolling */
   position: relative; /* Ensures section stays in flow */
 }
 
+#testimonials {
+  text-align: center;
+  padding-bottom: 40px;
+}
 
+#testimonials h2 {
+  margin-bottom: 25px !important; /* Creates spacing below title */
+}
 
-/* Specific fix for Services, Gallery, and Testimonials */
-/* #services, #gallery, #testimonials, #about {
-  padding-top: 160px !important;  /* Additional spacing to prevent cutting off headings */ 
-   /* scroll-margin-top: 160px !important; */
-/* }  */
+.testimonials-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive layout */
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: rgba(0, 0, 0, 0.5);
+  max-width: 95%;
+  font-size: 0.85rem;
+  padding: 15px !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  color: white;
+  text-align: left;
+}
+
+.testimonials-section {
+  margin-top: 40px !important; /* Increased from 10px */
+  padding-top: 20px !important; /* Adds more spacing above */
+}
+
+.testimonial-card h3 {
+  color: #D9C6A0;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.testimonial-card p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 5px;
+}
 
 /* Add spacing above sections to prevent cut-off */
 section::before {
@@ -93,9 +132,8 @@ section::before {
 }
 
 section {
-  padding: 80px 20px;
-  padding-top: 60px;
-  padding-bottom: 80px; /* Ensure bottom spacing */
+  padding: 40px 20px;
+  padding-bottom: 30px; /* Ensure bottom spacing */
   text-align: center;
   min-height: 100vh;
   overflow: hidden;
@@ -106,14 +144,16 @@ section {
 h1, h2, h3 {
   color: #D9C6A0;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+  margin-bottom: 8px;
 }
 
 p, blockquote {
-  color: white !important
+  color: white !important;
+  margin-bottom: 6px !important;
 }
 
-h1 { font-size: 2rem; font-weight: bold; }
-h2 { text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); }
+h1 { font-size: 1.8rem; font-weight: bold; }
+h2 { text-shadow: 1.5px 2px 8px rgba(0, 0, 0, 0.7); }
 
 /* ============================= */
 /* HEADER & NAVBAR */
@@ -136,7 +176,7 @@ header {
 }
 
 .logo img {
-  max-height: 100px;
+  max-height: 80px;
   width: auto;
   object-fit: contain;
   margin-left: 20px;
@@ -157,6 +197,58 @@ header {
   object-fit: cover; /* Ensures it covers the container without stretching */
   display: block; /* Prevents extra spacing issues */
   border-radius: 5px; /* Optional: keeps images looking neat */
+}
+
+/* Lightbox Modal */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Close Button */
+.lightbox .close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Lightbox Image */
+.lightbox img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 5px;
+}
+
+/* Navigation Buttons */
+.lightbox .prev, .lightbox .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  color: white;
+  font-size: 30px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.lightbox .prev { left: 10px; }
+.lightbox .next { right: 10px; }
+
+.lightbox .prev:hover, .lightbox .next:hover {
+  background: rgba(255, 255, 255, 0.6);
 }
 
 nav {
@@ -196,9 +288,43 @@ nav {
   border-radius: 5px;
 }
 
+/* Style for Hamburger Icon */
+.navbar-toggle {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  width: 35px;
+  height: 30px;
+  position: absolute;
+}
+
+.navbar-toggle div {
+  width: 30px;
+  height: 4px;
+  background-color: #003B61;
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Style when menu is open (optional animation) */
+.navbar-toggle.active div:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.navbar-toggle.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggle.active div:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
 /* Hide Mobile Menu on Large Screens */
 @media (min-width: 769px) {
-  .navbar-toggle { display: none !important; }
+  .navbar-toggle { 
+    display: none !important; }
 }
 
 /* Mobile Menu */
@@ -227,23 +353,24 @@ nav {
 footer {
   background: linear-gradient(to right, #0b3a6170, #D9C6A0);
   backdrop-filter: blur(10px);
-  padding: 1rem 2rem;
+  padding: 0.7rem 2rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
-  min-height: 70px;
+  min-height: 60px;
 }
 
 .footer-content {
   display: flex;
-  align-items: center;
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #ffffff;
+  text-align: center;
 }
 
 .footer-content a {
@@ -254,6 +381,40 @@ footer {
 
 .footer-content a:hover {
   color: #003B61;
+  text-decoration: underline;
+}
+
+/* Ensure "All Rights Reserved" and Social Links are Aligned */
+.footer-bottom {
+  margin-top: 5px;
+  display: flex;
+  align-items: center; /* Align text & icons in one row */
+  gap: 12px; /* Add space between text and icons */
+  justify-content: center;
+}
+
+/* Make "All Rights Reserved" White */
+.footer-bottom span {
+  color: #ffffff;
+  font-size: 0.8rem;
+  white-space: nowrap; /* Prevents wrapping */
+}
+
+/* Social Icons on the Right */
+.social-icons {
+  display: flex;
+  gap: 12px; /* Space between icons */
+  align-items: center;
+}
+
+.social-icons img {
+  width: 22px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.1);
 }
 
 /* ============================= */
@@ -263,7 +424,7 @@ footer {
 .text-overlay {
   background: transparent !important;
   position: relative !important;
-  margin-top: -50px !important;
+  padding-bottom: 20px !important; /* Instead of margin-top */
   padding-top: 0 !important;
   top: 0 !important;
   border-radius: 10px;
@@ -277,28 +438,40 @@ footer {
 /* ============================= */
 
 .services-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  gap: 15px; /* Adds spacing between cards */
-  justify-content: center;
-  align-items: start;
-  width: 90%;
+  display: flex;
+  justify-content: center; /* Centers both columns */
+  gap: 40px; /* Space between the columns */
+  align-items: flex-start;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px 0;
 }
 
+/* Each section column */
+.services-column {
+  flex: 1;
+  max-width: 45%; /* Prevents columns from getting too wide */
+  min-width: 300px; /* Ensures good sizing on smaller screens */
+}
+
+/* Service cards stay uniform */
 .service-card {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  margin-bottom: 15px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   text-align: center;
-  min-height: 140px; /* Adjust card height */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure the "We Also Offer" title aligns correctly */
+.services-column h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #D9C6A0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .service-card:hover {
@@ -333,6 +506,27 @@ footer {
   }
 }
 
+/* Style for Contact Us text */
+.contact-text {
+  font-size: 1.2rem; /* Increase font size */
+  font-weight: bold; /* Make it bolder */
+  color: #fff; /* Change text color to white */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add a shadow for better contrast */
+  background: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background */
+  padding: 10px 15px; /* Add spacing around text */
+  border-radius: 8px; /* Add rounded corners */
+  display: inline-block; /* Prevent full width */
+  text-align: center; /* Ensure text is centered */
+}
+
+/* Responsive: Adjust text size for mobile */
+@media (max-width: 768px) {
+  .contact-text {
+    font-size: 1rem; /* Slightly smaller text on mobile */
+    padding: 8px 12px;
+  }
+}
+
 /* ============================= */
 /* QUOTE TOOL FORM */
 /* ============================= */
@@ -354,12 +548,14 @@ footer {
 .quote-tool {
   background: rgba(0, 0, 0, 0.7); /* Darkened background for readability */
   padding: 15px;
+  padding-right: 30px;
   border-radius: 10px;
   text-align: center;
-  max-width: 600px; /* Keeps form compact */
-  margin: 0 auto;
+  max-width: 650px; /* Keeps form compact */
+  margin: 0 auto 10px auto;
+  display: block;
   color: white;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Styling for the Labels */
@@ -376,16 +572,17 @@ footer {
 .form-row {
   display: flex;
   justify-content: space-between;
-  gap:15px;
-  margin-bottom: 10px;
+  gap: 30px;
+  margin-bottom: 8px;
 }
 
 /* Style the Input Fields */
 .quote-tool input,
 .quote-tool textarea {
   width: 100%;
-  padding: 8px;
-  font-size: 0.9rem;
+  height: 36px !important;
+  padding: 6px;
+  font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.1);
@@ -403,16 +600,16 @@ footer {
 .quote-btn {
   background: #D9C6A0;
   color: black;
-  padding: 10px 15px;
+  padding: 6px 0;
   border: none;
   border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
-  width: 100%;
+  width: 90%;
   transition: background 0.3s ease;
   pointer-events: auto !important;
   position: relative;
-  z-index: 9999 !important;
+  z-index: 1 !important;
   cursor: pointer;
 }
 
@@ -421,13 +618,15 @@ footer {
   color: #D9C6A0;
 }
 
-/* Styling the Estimated Cost Text */
 .quote-estimate {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: bold;
-  margin-top: 15px;
+  text-align: center;
+  margin: 10px;
   color: #D9C6A0;
+  border-radius: 5px;
 }
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .cta-box {
@@ -443,5 +642,27 @@ footer {
 
   .quote-form .form-group {
     width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .quote-tool {
+    max-width: 100%;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .quote-tool input,
+  .quote-tool textarea {
+    height: 34px !important; /* Slightly reduced for mobile */
+    font-size: 0.9rem !important;
+  }
+
+  .quote-btn {
+    font-size: 0.9rem;
+    padding: 7px 12px;
   }
 }

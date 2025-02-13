@@ -18,9 +18,9 @@
     </div>
     <nav>
         <button id="navbar-toggle" class="navbar-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
+            <div></div>
+            <div></div>
+            <div></div>
         </button>
         <ul id="navbar-menu" class="navbar-menu">
             <li><a href="#home">Home</a></li>
@@ -38,27 +38,23 @@
     <div class="text-overlay">
         <section id="home" class="section">
             <h1>Welcome to Haines Custom Coatings</h1>
-            <p>We specialize in interior and exterior painting services for Santa Cruz and neighboring counties.</p>
             
             <div class="cta-banner">
-              <h2>🏡 Ready to Transform Your Home?</h2>
-              <p>Get a free consultation and color recommendations from our experts.</p>
+                <h2>We specialize in interior and exterior painting services for Santa Cruz and neighboring counties.</h2>
+                <p></p>
+                <p>Get a free consultation and color recommendations from our experts.</p>
           
-              <div class="quote-tool">
-                  <h3>Get Your Free Quote</h3>
+                <div class="quote-tool">
+                   <h3>Get Your Free Quote</h3>
                   <form name="quoteForm" method="POST" data-netlify="true">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="cabinets">Number of Cabinets:</label>
-                            <input type="number" id="cabinets" name="cabinets" min="0" value="0">
-                        </div>
-                        <div class="form-group">
-                            <label for="drawers">Number of Drawers:</label>
-                            <input type="number" id="drawers" name="drawers" min="0" value="0">
+                            <input type="number" id="cabinets" name="cabinets" min="0" placeholder="0">
                         </div>
                         <div class="form-group">
                             <label for="doors">Number of Doors:</label>
-                            <input type="number" id="doors" name="doors" min="0" value="0">
+                            <input type="number" id="doors" name="doors" min="0" placeholder="0">
                         </div>
                     </div>
                 
@@ -86,7 +82,7 @@
                             <input type="tel" id="phone" name="phone" required>
                         </div>
                     </div>
-                
+                    <div id="estimatedCost" class="quote-estimate">$0.00</div>
                     <button type="submit" class="quote-btn">Get My Free Quote</button>
                 </form>
               </div>
@@ -99,7 +95,7 @@
         <section id="services" class="section">
             <div class="services-container">
                 <!-- Left Side: Service Cards -->
-                <div class="service-list">
+                <div class="service-column">
                     <h2>Our Services</h2>
                     <div class="service-card">
                         <h3>Interior Painting</h3>
@@ -124,7 +120,7 @@
                 </div>
 
                 <!-- Right Side: Also Offer Service Cards -->
-                <div class="service-list">
+                <div class="service-column">
                     <h2>We Also Offer:</h2>
                     <div class="service-card">
                         <h3>Deck or Porch Staining</h3>
@@ -159,7 +155,7 @@
 
             <!-- Contact Us Message: Centered Below Both Lists -->
             <div class="service-contact">
-                <p>Contact Us To Inquire About Other Services We Provide!</p>
+                <p class="contact-text">Contact Us To Inquire About Other Services We Provide!</p>
             </div>
         </section>
     </div>
@@ -175,16 +171,57 @@
                 <img src="images/uploads/INT_Dining_Room.png" alt="Dining Room">
                 <img src="images/uploads/INT_Frontdoor_View.png" alt="Front Door">
             </div>
+
+            <div id="lightbox" class="lightbox">
+                <span class="close">&times;</span>
+                <img id="lightbox-img" src="">
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
         </section>
     </div>
 
     <!-- Testimonials Section -->
     <div class="text-overlay">
-        <section id="testimonials" class="section">
+        <section id="testimonials">
             <h2>What Our Clients Say</h2>
-            <blockquote>"Fantastic service! My house looks brand new." - Sarah L.</blockquote>
-            <blockquote>"Highly professional and meticulous." - Mark R.</blockquote>
-            <blockquote>"Great value for the quality of work." - Emily G.</blockquote>
+            <div class="testimonials-container">
+        
+                <div class="testimonial-card">
+                    <h3>Lorianne Vierra</h3>
+                   <p>“I’m a real estate agent and I called Morgan Haines of Haines Custom Coatings to give me a bid on an interior paint job on a home I’m selling.
+                      He was there before I was to bid the job (I love when people are on time) and was very professional and efficient with the bidding process.
+                      My client was happy with the price, so we scheduled the job.
+                      Morgan and his team did a fantastic job, making the home look fresh and ready to sell. The process was seamless, and I highly recommend this company to anyone needing to paint their home!
+                      Easy 5-star experience!”</p>
+                </div>
+        
+                <div class="testimonial-card">
+                    <h3>Lester Miller</h3>
+                    <p>“Haines Custom Coatings did a superb job of painting our rental property in Capitola. Excellent prep work was done on the building including replacement of some degraded boards on the carport. It was a pleasure working with Morgan and his crew. We highly recommend Haines.”</p>
+                </div>
+        
+                <div class="testimonial-card">
+                    <h3>Scott Terrill</h3>
+                    <p>“Morgan Haines and his crew did an amazing job painting our house and treating our decks. The crew was quick and efficient and did the job with minimal disturbance to us. We are extremely happy with the outcome and recommend Haines Custom Coatings.”</p>
+                </div>
+        
+                <div class="testimonial-card">
+                    <h3>Lori Ritland</h3>
+                    <p>“I highly recommend Morgan and Haines Custom Coatings. Morgan shows up when he says he will; he is very competent and thorough. He is a problem solver and will make sure the project is completed to everyone's satisfaction.”</p>
+                </div>
+        
+                <div class="testimonial-card">
+                    <h3>Larry Wisler</h3>
+                    <p>“Morgan is a real professional painter. Just have to watch him apply the paint and cut in edges to know he is a skilled and caring contractor. Had a great experience and finish results are excellent. Thank you Morgan.”</p>
+                </div>
+        
+                <div class="testimonial-card">
+                    <h3>Jon Kent</h3>
+                    <p>“Thank you for a job well done!”</p>
+                </div>
+        
+            </div>
         </section>
     </div>
 
@@ -206,9 +243,21 @@
             <a href="tel:+18315159328">&#128222;(831) 515-9328</a> | 
             <a href="mailto:hainescustomcoatings@gmail.com">&#9993; hainescustomcoatings@gmail.com</a>
         </span>
-        <span>| © 2025 Haines Custom Coatings LIC# 1108377 | All Rights Reserved</span>
+        <span>| © 2025 Haines Custom Coatings LIC# 1108377</span>
+    </div>
+
+   <!-- Centered section for Rights Reserved & Social Media -->
+   <div class="footer-bottom">
+        <span>All Rights Reserved</span>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/haines_custom_coatings/" target="_blank">
+                <img src="images/icons/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/people/Haines-Custom-Coatings/61556068676067/" target="_blank">
+                <img src="images/icons/facebook.png" alt="Facebook">
+            </a>
+        </div>
     </div>
 </footer>
-
 </body>
 </html>
