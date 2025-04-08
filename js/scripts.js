@@ -194,3 +194,12 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(section);
   });
 });
+
+document.addEventListener("scroll", () => {
+  const scrolled = window.scrollY;
+
+  document.querySelectorAll("[data-parallax]").forEach((section) => {
+    const speed = parseFloat(section.dataset.parallax) || 0.3;
+    section.style.backgroundPositionY = `${scrolled * speed}px`;
+  });
+});
