@@ -90,29 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Background Image Rotator
-const backgrounds = [
-  'images/uploads/EXT_House2_Background.jpeg',
-  'images/uploads/INT_Background.jpeg',
-  'images/uploads/INT_Background2.jpeg',
-  'images/uploads/INT_Background3.jpeg'
-];
-
-let backgroundIndex = 0;
-
-// Function to change the background
-function changeBackground() {
-  document.body.style.backgroundImage = `url('${backgrounds[backgroundIndex]}')`;
-  backgroundIndex = (backgroundIndex + 1) % backgrounds.length;
-}
-
-// Set initial background
-changeBackground();
-
-// Rotate background every 5 seconds
-setInterval(changeBackground, 5000);
-
-window.onload = function() {
+document.addEventListener("DOMContentLoaded", () => {
   const cabinetsInput = document.getElementById("cabinets");
   const doorsInput = document.getElementById("doors");
   const squareFootageInput = document.getElementById("squareFootage");
@@ -146,7 +124,7 @@ window.onload = function() {
 
   // Ensure initial value is displayed
   updateEstimate();
-};
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   const homeButton = document.querySelector('.navbar-menu a[href="#home"]');
@@ -196,5 +174,23 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("🎯 Final scroll position:", window.scrollY);
       }, 1000);
     });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll(".section");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  sections.forEach(section => {
+    observer.observe(section);
   });
 });

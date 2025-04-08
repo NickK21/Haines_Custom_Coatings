@@ -11,17 +11,19 @@
 <body>
 
 <header>
-    <div class="logo">
-        <a href="#home">
-            <img src="images/HCC_Logo_Color_2.png" alt="Haines Custom Coatings">
-        </a>
-    </div>
     <nav>
+        <div class="logo">
+            <a href="#home">
+                <img src="images/HCC_Logo_Color_2.png" alt="Haines Custom Coatings">
+            </a>
+        </div>
+
         <button id="navbar-toggle" class="navbar-toggle">
-            <div></div>
-            <div></div>
-            <div></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </button>
+
         <ul id="navbar-menu" class="navbar-menu">
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
@@ -33,221 +35,162 @@
     </nav>
 </header>
 
-<main>
-    <!-- Home Section -->
+<section id="home" class="parallax-section">
+    <div class="overlay">
+        <h1 class="section-title">Welcome to Haines Custom Coatings</h1>
+        <h2 class="section-subtitle">We specialize in interior and exterior painting services for Santa Cruz and neighboring counties.</h2>
+        <p>Quality and Precision for Santa Cruz and Neighboring Counties</p>
+    </div>
+    <div class="quote-tool">
+        <h3>Get Your Free Quote</h3>
+        <form name="quoteForm" method="POST" data-netlify="true">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="cabinets">Number of Cabinets:</label>
+                    <input type="number" id="cabinets" name="cabinets" min="0" placeholder="0">
+                </div>
+                <div class="form-group">
+                    <label for="doors">Number of Doors:</label>
+                    <input type="number" id="doors" name="doors" min="0" placeholder="0">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="squareFootage">Square Footage:</label>
+                <input type="number" id="squareFootage" name="squareFootage" placeholder="Enter square footage">
+            </div>
+            <div class="form-group">
+                <label for="notes">Additional Notes (E.g. Interior/Exterior):</label>
+                <textarea id="notes" name="notes" rows="3"></textarea>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Your Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+            </div>
+            <div id="estimatedCost" class="quote-estimate">Estimated Cost: $0.00</div>
+            <button type="submit" class="quote-btn">Get My Free Quote</button>
+        </form>
+    </div>
+</section>
+
+<section id="services" class="parallax-section">
     <div class="text-overlay">
-        <section id="home" class="section">
-            <h1>Welcome to Haines Custom Coatings</h1>
-            
-            <div class="cta-banner">
-                <h2>We specialize in interior and exterior painting services for Santa Cruz and neighboring counties.</h2>
-                <p></p>
-                <p>Get a free consultation and color recommendations from our experts.</p>
-          
-                <div class="quote-tool">
-                   <h3>Get Your Free Quote</h3>
-                  <form name="quoteForm" method="POST" data-netlify="true">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="cabinets">Number of Cabinets:</label>
-                            <input type="number" id="cabinets" name="cabinets" min="0" placeholder="0">
-                        </div>
-                        <div class="form-group">
-                            <label for="doors">Number of Doors:</label>
-                            <input type="number" id="doors" name="doors" min="0" placeholder="0">
-                        </div>
-                    </div>
-                
-                    <div class="form-group full-width">
-                        <label for="squareFootage">Square Footage:</label>
-                        <input type="number" id="squareFootage" name="squareFootage" placeholder="Enter square footage">
-                    </div>                        
-                
-                    <div class="form-group">
-                        <label for="notes">Additional Notes (Optional):</label>
-                        <textarea id="notes" name="notes" rows="3"></textarea>
-                    </div>
-                
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Your Name:</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your Email:</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Your Phone Number:</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                    </div>
-                    <div id="estimatedCost" class="quote-estimate">$0.00</div>
-                    <button type="submit" class="quote-btn">Get My Free Quote</button>
-                </form>
-              </div>
+        <div class="services-container">
+            <div class="service-column">
+                <h2 class="section-title">Our Services</h2>
+                <div class="service-card"><h3>Interior Painting</h3><p>Expert application of health-compliant paints and stains to enhance aesthetics and durability.</p></div>
+                <div class="service-card"><h3>Exterior Painting</h3><p>Premium finishes and time-tested coatings designed to withstand coastal climates.</p></div>
+                <div class="service-card"><h3>Commercial Painting</h3><p>Durable finishes for high-traffic commercial spaces, ensuring long-lasting professional appeal.</p></div>
+                <div class="service-card"><h3>Residential Painting</h3><p>Customized painting solutions to enhance your home’s style and longevity.</p></div>
+                <div class="service-card"><h3>Custom Coating Solutions</h3><p>Specialized coatings tailored to unique project needs for durability and performance.</p></div>
+            </div>
+            <div class="service-column">
+                <h2 class="section-title">We Also Offer</h2>
+                <div class="service-card"><h3>Deck or Porch Staining</h3><p>Preserves wood’s longevity and enhances its natural beauty while protecting against weather damage.</p></div>
+                <div class="service-card"><h3>Door Staining</h3><p>Brings out the rich texture of wooden doors while ensuring long-lasting color retention.</p></div>
+                <div class="service-card"><h3>Fence or Gate Painting</h3><p>Protects against rust, rot, and fading while adding curb appeal.</p></div>
+                <div class="service-card"><h3>Siding Staining</h3><p>Strengthens the surface against environmental damage while maintaining a fresh, polished look.</p></div>
+                <div class="service-card"><h3>Paint Removal</h3><p>Safe and effective removal of old or damaged paint layers, preparing surfaces for refinishing.</p></div>
+                <div class="service-card"><h3>Trim & Baseboard Painting</h3><p>Provides clean, sharp detailing that enhances the overall aesthetic of interior spaces.</p></div>
+                <div class="service-card"><h3>Wallpaper Removal</h3><p>Carefully removes outdated wallpaper without damaging underlying surfaces, readying walls for new finishes.</p></div>
+            </div>
+        </div>
+        <div class="service-contact">
+            <p class="contact-text">Contact Us To Inquire About Other Services We Provide!</p>
+        </div>
+    </div>
+</section>
+
+<section id="gallery" class="parallax-section">
+    <h2 class="section-title">Gallery</h2>
+    <p class="gallery-subtext">Take a look at our recent work.</p>
+    <div class="gallery">
+      <img src="images/uploads/INT_Background2.jpeg" alt="Interior Work">
+      <img src="images/uploads/EXT_House2_Background.jpeg" alt="Exterior House">
+      <img src="images/uploads/INT_Background3.jpeg" alt="Living Room Paint">
+    </div>
+  </section>  
+
+<section id="testimonials" class="parallax-section">
+    <div class="text-overlay">
+        <h2 class="section-title">Testimonials</h2>
+        <div class="testimonials-container">
+          <div class="testimonial-card">
+            <h3>Lorianne Vierra</h3>
+            <p>“I’m a real estate agent and I called Morgan Haines of Haines Custom Coatings to give me a bid on an interior paint job on a home I’m selling. 
+                He was there before I was to bid the job (I love when people are on time) and was very professional and efficient with the bidding process. 
+                My client was happy with the price, so we scheduled the job. Morgan and his team did a fantastic job, making the home look fresh and ready to sell. 
+                The process was seamless, and I highly recommend this company to anyone needing to paint their home! Easy 5-star experience!”</p>
           </div>
-        </section>
+          <div class="testimonial-card">
+            <h3>Lester Miller</h3>
+            <p>“Haines Custom Coatings did a superb job of painting our rental property in Capitola. 
+                Excellent prep work was done on the building including replacement of some degraded boards on the carport. 
+                It was a pleasure working with Morgan and his crew. We highly recommend Haines.”</p>
+          </div>
+          <div class="testimonial-card">
+            <h3>Scott Terrill</h3>
+            <p>“Morgan Haines and his crew did an amazing job painting our house and treating our decks. 
+                The crew was quick and efficient and did the job with minimal disturbance to us. 
+                We are extremely happy with the outcome and recommend Haines Custom Coatings.”</p>
+          </div>
+          <div class="testimonial-card">
+            <h3>Lori Ritland</h3>
+            <p>“I highly recommend Morgan and Haines Custom Coatings. Morgan shows up when he says he will; he is very competent and thorough. 
+                He is a problem solver and will make sure the project is completed to everyone's satisfaction.”</p>
+          </div>
+          <div class="testimonial-card">
+            <h3>Larry Wisler</h3>
+            <p>“Morgan is a real professional painter. Just have to watch him apply the paint and cut in edges to know he is a skilled and caring contractor. 
+                Had a great experience and finish results are excellent. Thank you Morgan.”</p>
+          </div>
+          <div class="testimonial-card">
+            <h3>Jon Kent</h3>
+            <p>“Thank you for a job well done!”</p>
+          </div>
+        </div>
       </div>
+</section>
 
-    <!-- Services Section -->
-    <div class="text-overlay">
-        <section id="services" class="section">
-            <div class="services-container">
-                <!-- Left Side: Service Cards -->
-                <div class="service-column">
-                    <h2>Our Services</h2>
-                    <div class="service-card">
-                        <h3>Interior Painting</h3>
-                        <p>Expert application of health-compliant paints and stains to enhance aesthetics and durability.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Exterior Painting</h3>
-                        <p>Premium finishes and time-tested coatings designed to withstand coastal climates.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Commercial Painting</h3>
-                        <p>Durable finishes for high-traffic commercial spaces, ensuring long-lasting professional appeal.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Residential Painting</h3>
-                        <p>Customized painting solutions to enhance your home’s style and longevity.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Custom Coating Solutions</h3>
-                        <p>Specialized coatings tailored to unique project needs for durability and performance.</p>
-                    </div>
-                </div>
+<section id="about" class="parallax-section">
+    <h2 class="section-title">About Us</h2>
+    <div class="about-overlay">
+        <p>
+            Haines Custom Coatings is committed to delivering high-quality painting services for homes and businesses in Santa Cruz and beyond. 
+            We pride ourselves on providing generations of quality service. 
+            With decades of experience, our mission is to transform your space with precision, care, and expertise.
 
-                <!-- Right Side: Also Offer Service Cards -->
-                <div class="service-column">
-                    <h2>We Also Offer:</h2>
-                    <div class="service-card">
-                        <h3>Deck or Porch Staining</h3>
-                        <p>Preserves wood’s longevity and enhances its natural beauty while protecting against weather damage.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Door Staining</h3>
-                        <p>Brings out the rich texture of wooden doors while ensuring long-lasting color retention.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Fence or Gate Painting</h3>
-                        <p>Protects against rust, rot, and fading while adding curb appeal.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Siding Staining</h3>
-                        <p>Strengthens the surface against environmental damage while maintaining a fresh, polished look.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Paint Removal</h3>
-                        <p>Safe and effective removal of old or damaged paint layers, preparing surfaces for refinishing.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Trim & Baseboard Painting</h3>
-                        <p>Provides clean, sharp detailing that enhances the overall aesthetic of interior spaces.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Wallpaper Removal</h3>
-                        <p>Carefully removes outdated wallpaper without damaging underlying surfaces, readying walls for new finishes.</p>
-                    </div>
-                </div>
-            </div>
+        </p>
+        <p>Whether you're looking to refresh your home's interior or elevate the curb appeal of your business, 
+            our team of professionals delivers exceptional results every time.
 
-            <!-- Contact Us Message: Centered Below Both Lists -->
-            <div class="service-contact">
-                <p class="contact-text">Contact Us To Inquire About Other Services We Provide!</p>
-            </div>
-        </section>
+        </p>
+        <p>Call Us Today For Your Free Local Estimate!
+
+        </p>
     </div>
-
-    <!-- Gallery Section -->
-    <div class="text-overlay">
-        <section id="gallery" class="section">
-            <h2>Gallery</h2>
-            <div class="gallery">
-                <img src="images/uploads/EXT_House1_Front1.png" alt="House Front 1">
-                <img src="images/uploads/EXT_House1_Front2.png" alt="House Front 2">
-                <img src="images/uploads/EXT_House1_Front3.png" alt="House Front 3">
-                <img src="images/uploads/INT_Dining_Room.png" alt="Dining Room">
-                <img src="images/uploads/INT_Frontdoor_View.png" alt="Front Door">
-            </div>
-
-            <div id="lightbox" class="lightbox">
-                <span class="close">&times;</span>
-                <img id="lightbox-img" src="">
-                <button class="prev">&#10094;</button>
-                <button class="next">&#10095;</button>
-            </div>
-        </section>
-    </div>
-
-    <!-- Testimonials Section -->
-    <div class="text-overlay">
-        <section id="testimonials">
-            <h2>What Our Clients Say</h2>
-            <div class="testimonials-container">
-        
-                <div class="testimonial-card">
-                    <h3>Lorianne Vierra</h3>
-                   <p>“I’m a real estate agent and I called Morgan Haines of Haines Custom Coatings to give me a bid on an interior paint job on a home I’m selling.
-                      He was there before I was to bid the job (I love when people are on time) and was very professional and efficient with the bidding process.
-                      My client was happy with the price, so we scheduled the job.
-                      Morgan and his team did a fantastic job, making the home look fresh and ready to sell. The process was seamless, and I highly recommend this company to anyone needing to paint their home!
-                      Easy 5-star experience!”</p>
-                </div>
-        
-                <div class="testimonial-card">
-                    <h3>Lester Miller</h3>
-                    <p>“Haines Custom Coatings did a superb job of painting our rental property in Capitola. Excellent prep work was done on the building including replacement of some degraded boards on the carport. It was a pleasure working with Morgan and his crew. We highly recommend Haines.”</p>
-                </div>
-        
-                <div class="testimonial-card">
-                    <h3>Scott Terrill</h3>
-                    <p>“Morgan Haines and his crew did an amazing job painting our house and treating our decks. The crew was quick and efficient and did the job with minimal disturbance to us. We are extremely happy with the outcome and recommend Haines Custom Coatings.”</p>
-                </div>
-        
-                <div class="testimonial-card">
-                    <h3>Lori Ritland</h3>
-                    <p>“I highly recommend Morgan and Haines Custom Coatings. Morgan shows up when he says he will; he is very competent and thorough. He is a problem solver and will make sure the project is completed to everyone's satisfaction.”</p>
-                </div>
-        
-                <div class="testimonial-card">
-                    <h3>Larry Wisler</h3>
-                    <p>“Morgan is a real professional painter. Just have to watch him apply the paint and cut in edges to know he is a skilled and caring contractor. Had a great experience and finish results are excellent. Thank you Morgan.”</p>
-                </div>
-        
-                <div class="testimonial-card">
-                    <h3>Jon Kent</h3>
-                    <p>“Thank you for a job well done!”</p>
-                </div>
-        
-            </div>
-        </section>
-    </div>
-
-    <!-- About Section -->
-    <div class="text-overlay">
-        <section id="about" class="section">
-            <h2>About Us</h2>
-            <p>Haines Custom Coatings is committed to delivering high-quality painting services for homes and businesses in Santa Cruz and beyond.</p>
-            <p>We pride ourselves on providing generations of quality service. With decades of experience in residential and commercial painting, our mission is to transform your space with precision, care, and expertise.</p>
-            <p>Whether you're looking to refresh your home's interior or elevate the curb appeal of your business, our team of professionals delivers exceptional results every time.</p>
-            <p>Call Us Today For Your Free Local Estimate!</p>
-        </section>
-    </div>
-</main>
+</section>
 
 <footer>
     <div class="footer-content">
-        <span>Contact us: 
-            <a href="tel:+18315159328">&#128222;(831) 515-9328</a> | 
+        <span>
+            Contact us: 
+            <a href="tel:+18315159328">&#128222; (831) 515-9328</a> | 
             <a href="mailto:hainescustomcoatings@gmail.com">&#9993; hainescustomcoatings@gmail.com</a>
         </span>
         <span>| © 2025 Haines Custom Coatings LIC# 1108377</span>
     </div>
 
-   <!-- Centered section for Rights Reserved & Social Media -->
-   <div class="footer-bottom">
+    <div class="footer-bottom">
         <span>All Rights Reserved</span>
         <div class="social-icons">
             <a href="https://www.instagram.com/haines_custom_coatings/" target="_blank">
@@ -259,5 +202,6 @@
         </div>
     </div>
 </footer>
+
 </body>
 </html>
