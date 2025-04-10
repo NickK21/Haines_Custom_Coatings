@@ -3,7 +3,6 @@
   box-sizing: border-box;
 }
 
-/* LOGO */
 .logo {
   display: flex;
   align-items: center;
@@ -61,7 +60,6 @@ p {
   z-index: 9999;
 }
 
-/* Close Button */
 .lightbox .close {
   position: absolute;
   top: 15px;
@@ -71,7 +69,6 @@ p {
   cursor: pointer;
 }
 
-/* Lightbox Image */
 .lightbox img {
   max-width: 80%;
   max-height: 80%;
@@ -661,10 +658,6 @@ nav {
   }
 }
 
-/* ============================= */
-/* FOOTER */
-/* ============================= */
-
 footer {
   background: linear-gradient(to right, rgba(11, 58, 97, 0.65) 0%, rgba(217, 198, 160, 1) 100%);
   backdrop-filter: blur(10px);
@@ -716,7 +709,6 @@ footer {
   white-space: nowrap; 
 }
 
-/* Social Icons on the Right */
 .social-icons {
   display: flex;
   gap: 12px; 
