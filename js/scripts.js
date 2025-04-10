@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     menu.classList.toggle("active");
   });
 
-  // Close menu when clicking a link (for mobile usability)
+  // Closes menu when clicking a link (for mobile usability)
   document.querySelectorAll(".navbar-menu li a").forEach(link => {
     link.addEventListener("click", () => {
       if (menu.classList.contains("active")) {
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Optional: Close the menu when clicking outside
+  // Closes the menu when clicking outside
   document.addEventListener("click", (e) => {
     if (!menu.contains(e.target) && !toggleButton.contains(e.target)) {
       menu.classList.remove("active");
@@ -37,12 +37,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Navigation buttons for lightbox
   const prevButton = document.createElement("button");
   prevButton.classList.add("prev");
-  prevButton.innerHTML = "&#10094;"; // Left arrow
+  // Left arrow
+  prevButton.innerHTML = "&#10094;"; 
   lightbox.appendChild(prevButton);
 
   const nextButton = document.createElement("button");
   nextButton.classList.add("next");
-  nextButton.innerHTML = "&#10095;"; // Right arrow
+  // Right arrow
+  nextButton.innerHTML = "&#10095;"; 
   lightbox.appendChild(nextButton);
 
   let currentIndex = 0;
@@ -75,13 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
       updateImage(currentIndex + 1);
   });
 
-  // Close on clicking outside image
-  lightbox.addEventListener("click", (event) => {
-    if (event.target !== lightboxImg && event.target !== prevBtn && event.target !== nextBtn) {
-        lightbox.style.display = "none";
-    }
-  });
-
   // Close on pressing Esc
   document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
@@ -95,11 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const doorsInput = document.getElementById("doors");
   const squareFootageInput = document.getElementById("squareFootage");
   const estimatedCost = document.getElementById("estimatedCost");
-
-  if (!estimatedCost) {
-      console.error("🚨 ERROR: The estimated cost element is missing!");
-      return;
-  }
 
   // Define pricing
   const pricePerCabinet = 120;
@@ -124,57 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Ensure initial value is displayed
   updateEstimate();
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const homeButton = document.querySelector('.navbar-menu a[href="#home"]');
-  const homeSection = document.getElementById("home");
-
-  if (homeButton && homeSection) {
-    homeButton.addEventListener("click", (event) => {
-      event.preventDefault(); // Prevents default anchor behavior
-
-      homeSection.scrollIntoView({ behavior: "smooth", block: "start" });
-
-      window.scrollTo({
-        top: homeSection.offsetTop - 500, // Scrolls slightly past the navbar
-        behavior: "smooth"
-      });
-
-      setTimeout(() => {
-        history.pushState(null, null, window.location.pathname);
-      }, 500);
-    });
-  } else {
-    console.warn("⚠️ Home button or Home section not found.");
-  }
-  
-  document.addEventListener("DOMContentLoaded", () => {
-    const servicesButton = document.querySelector('a[href="#services"]');
-    const servicesSection = document.getElementById("services");
-  
-    if (!servicesButton || !servicesSection) {
-      console.error("🚨 ERROR: Services button or section not found!");
-      return;
-    }
-  
-    servicesButton.addEventListener("click", (event) => {
-      event.preventDefault();
-  
-      console.log("✅ Services button clicked! Adjusting scroll position...");
-      
-      const yOffset = -600; // Change this value if needed
-      const y = servicesSection.getBoundingClientRect().top + window.scrollY + yOffset;
-  
-      console.log(`🔥 Scrolling to Y Position: ${y}`);
-      
-      window.scrollTo({ top: y, behavior: "smooth" });
-  
-      setTimeout(() => {
-        console.log("🎯 Final scroll position:", window.scrollY);
-      }, 1000);
-    });
-  });
 });
 
 document.addEventListener("DOMContentLoaded", () => {

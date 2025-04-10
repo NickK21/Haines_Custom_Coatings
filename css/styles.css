@@ -7,17 +7,16 @@
 .logo {
   display: flex;
   align-items: center;
-  margin-right: auto; /* Pushes everything else away */
+  margin-right: auto; 
 }
 
 .logo img {
-  max-height: 70px; /* Adjust size */
+  max-height: 70px; 
   width: auto;
   max-width: 180px;
   margin-left: 10px;
 }
 
-/* Ensure full-page height */
 html, body {
   height: 100%;
   margin: 0;
@@ -28,24 +27,24 @@ html, body {
 }
 
 h1, h2, h3 {
-  color: #D9C6A0; /* Gold color */
-  text-align: center; /* Center the headers */
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Add subtle shadow for visibility */
+  color: #D9C6A0; 
+  text-align: center; 
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); 
   margin-bottom: 8px;
   width: 100%;
 }
 
 p {
-  text-align: center; /* Center the paragraph text */
-  color: #ffffff; /* Gold color */
+  text-align: center; 
+  color: #ffffff; 
   font-size: 1rem;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6); /* Subtle shadow for better visibility */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6); 
   width: 100%;
 }
 
 .gallery {
-  margin-bottom: 10px; /* Reduce spacing */
-  padding-bottom: 0; /* Remove unnecessary padding */
+  margin-bottom: 10px; 
+  padding-bottom: 0; 
 }
 
 /* Lightbox Modal */
@@ -212,7 +211,7 @@ nav {
   }
 }
 
-/* Style when menu is open (optional animation) */
+/* Style when menu is open */
 .navbar-toggle.active div:nth-child(1) {
   transform: translateY(10px) rotate(45deg);
 }
@@ -231,15 +230,14 @@ nav {
     display: none !important; }
 }
 
-/* Background Image - Covers Full Page */
 .background {
-  position: fixed;  /* Keeps image in place while content scrolls */
+  position: fixed;  
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;  /* Viewport height */
+  height: 100vh;  
   background: url('../images/uploads/INT_Background.jpeg') no-repeat center center/cover;
-  z-index: -1;  /* Places it behind everything */
+  z-index: -1; 
 }
 
 .parallax-section {
@@ -269,14 +267,13 @@ nav {
 }
 
 .testimonials-section {
-  margin-top: 40px !important; /* Increased from 10px */
-  padding-top: 20px !important; /* Adds more spacing above */
+  margin-top: 40px !important; 
+  padding-top: 20px !important; 
 }
 
-/* Ensure background images don’t block scrolling */
 #home, #feature {
   background-size: cover;
-  background-attachment: fixed; /* Enables parallax */
+  background-attachment: fixed; 
   background-position: center;
   min-height: 100vh;
   position: relative;
@@ -292,7 +289,7 @@ nav {
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
-  color: #D9C6A0; /* Gold color */
+  color: #D9C6A0; 
   width: 100%;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
@@ -301,7 +298,6 @@ nav {
   background-image: url('../images/uploads/EXT_House2_Background.jpeg');
 }
 
-/* Solid Color Sections */
 #services {
   background-image: url('../images/uploads/EXT_House2_Background.jpeg');
   background-attachment: fixed;
@@ -318,14 +314,10 @@ nav {
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
 
-/* ============================= */
-/* TEXT OVERLAYS */
-/* ============================= */
-
 .text-overlay {
   background: transparent !important;
   position: relative !important;
-  padding-bottom: 20px !important; /* Instead of margin-top */
+  padding-bottom: 20px !important; 
   padding-top: 0 !important;
   top: 0 !important;
   border-radius: 10px;
@@ -340,8 +332,8 @@ nav {
 
 .services-container {
   display: flex;
-  justify-content: center; /* Centers both columns */
-  gap: 40px; /* Space between the columns */
+  justify-content: center; 
+  gap: 40px; 
   align-items: flex-start;
   width: 100%;
   max-width: 1200px;
@@ -349,14 +341,12 @@ nav {
   padding: 20px 0;
 }
 
-/* Each section column */
 .services-column {
   flex: 1;
-  max-width: 45%; /* Prevents columns from getting too wide */
-  min-width: 300px; /* Ensures good sizing on smaller screens */
+  max-width: 45%;
+  min-width: 300px; 
 }
 
-/* Service cards stay uniform */
 .service-card {
   background: rgba(0, 0, 0, 0.6);
   padding: 15px;
@@ -409,21 +399,21 @@ nav {
 
 /* Style for Contact Us text */
 .contact-text {
-  font-size: 1.2rem; /* Increase font size */
-  font-weight: bold; /* Make it bolder */
-  color: #fff; /* Change text color to white */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add a shadow for better contrast */
-  background: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background */
-  padding: 10px 15px; /* Add spacing around text */
-  border-radius: 8px; /* Add rounded corners */
-  display: inline-block; /* Prevent full width */
-  text-align: center; /* Ensure text is centered */
+  font-size: 1.2rem; 
+  font-weight: bold; 
+  color: #fff; 
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); 
+  background: rgba(0, 0, 0, 0.5); 
+  padding: 10px 15px; 
+  border-radius: 8px; 
+  display: inline-block; 
+  text-align: center; 
 }
 
 /* Responsive: Adjust text size for mobile */
 @media (max-width: 768px) {
   .contact-text {
-    font-size: 1rem; /* Slightly smaller text on mobile */
+    font-size: 1rem; 
     padding: 8px 12px;
   }
 }
@@ -527,7 +517,6 @@ nav {
   text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
 }
 
-/* GALLERY SECTION FIX */
 #gallery {
   background-image: url('../images/uploads/INT_Background2.jpeg');
   background-attachment: fixed;
@@ -715,8 +704,8 @@ footer {
 .footer-bottom {
   margin-top: 5px;
   display: flex;
-  align-items: center; /* Align text & icons in one row */
-  gap: 12px; /* Add space between text and icons */
+  align-items: center; 
+  gap: 12px; 
   justify-content: center;
 }
 
@@ -724,13 +713,13 @@ footer {
 .footer-bottom span {
   color: #ffffff;
   font-size: 0.8rem;
-  white-space: nowrap; /* Prevents wrapping */
+  white-space: nowrap; 
 }
 
 /* Social Icons on the Right */
 .social-icons {
   display: flex;
-  gap: 12px; /* Space between icons */
+  gap: 12px; 
   align-items: center;
 }
 
