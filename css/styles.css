@@ -380,7 +380,7 @@ nav {
   margin: 0;
 }
 
-/* Responsive Design - Adjust to 2 columns for smaller screens */
+/* Adjust to 2 columns for smaller screens */
 @media (max-width: 1024px) {
   .services-container {
     grid-template-columns: repeat(2, 1fr);
@@ -407,7 +407,7 @@ nav {
   text-align: center; 
 }
 
-/* Responsive: Adjust text size for mobile */
+/* Adjust text size for mobile */
 @media (max-width: 768px) {
   .contact-text {
     font-size: 1rem; 
