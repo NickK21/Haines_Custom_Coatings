@@ -2,7 +2,7 @@ Haines Custom Coatings
 
 Description
 
-Haines Custom Coatings is a professional painting and coatings company serving Santa Cruz and neighboring counties. This responsive website showcases the business’s services, client testimonials, and project gallery, and includes a built-in quote request form to simplify client engagement.
+Haines Custom Coatings is a professional painting and coatings company serving Santa Cruz and neighboring counties. This responsive website showcases the business’s services, client testimonials, and project gallery, and includes a built-in quote request form to simplify client engagement. Visit the live site here: [hainescustomcoatings.com](https://hainescustomcoatings.com)
 
 Features
 	•	Home Page: Overview of services and company mission.
@@ -18,3 +18,15 @@ Technologies Used
 	•	CSS3
 	•	JavaScript
 	•	Netlify (Hosting + Form Handling)
+
+
+## Screenshots
+
+![Home Page][HomePage]
+![Services Section][Services]
+![About Us][AboutUs]
+
+
+[HomePage]: images/uploads/Screenshots/QuoteTool_SS.jpeg
+[Services]: images/uploads/Screenshots/ServiceCard_SS.jpeg
+[AboutUs]: images/uploads/Screenshots/AboutUs_SS.jpeg
